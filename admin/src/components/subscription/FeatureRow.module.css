@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  border-bottom: 1px solid var(--clr-border);
+  transition: opacity var(--t-fast);
+  list-style: none;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.included .label {
+  color: var(--clr-text-secondary);
+}
+
+.excluded .label {
+  color: var(--clr-text-faint);
+  text-decoration: line-through;
+  text-decoration-color: #D1D5DB;
+}
+
+.iconCheck,
+.iconCross {
+  flex-shrink: 0;
+}
+
+.label {
+  line-height: 1.4;
+  flex: 1;
+}

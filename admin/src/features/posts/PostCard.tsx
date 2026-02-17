@@ -20,7 +20,7 @@ const getMembershipColor = (tier: string): string => {
 
 export const PostCard = React.memo(({ post }: PostCardProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden group cursor-pointer border border-gray-100">
+    <div className="bg-white rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden group cursor-pointer border border-gray-100 h-full flex flex-col">
       <div className="relative h-48 overflow-hidden bg-gray-200">
         <img
           src={post.imageUrl}
@@ -39,7 +39,7 @@ export const PostCard = React.memo(({ post }: PostCardProps) => {
         </div>
       </div>
 
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
           {post.title}
         </h3>
@@ -48,7 +48,7 @@ export const PostCard = React.memo(({ post }: PostCardProps) => {
         </p>
 
         {(post.type || post.date || post.ageLimit || post.paid) && (
-          <div className="flex flex-wrap gap-2 text-xs text-gray-500">
+          <div className="flex flex-wrap gap-2 text-xs text-gray-500 mt-auto">
             {post.type && (
               <span className="flex items-center gap-1">
                 <span className="font-medium">Type:</span> {post.type}
@@ -75,3 +75,4 @@ export const PostCard = React.memo(({ post }: PostCardProps) => {
     </div>
   );
 });
+

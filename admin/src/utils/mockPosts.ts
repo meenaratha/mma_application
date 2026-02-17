@@ -61,4 +61,18 @@ export const mockPosts: Post[] = [
     imageUrl: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=500&h=300&fit=crop',
     membershipTier: 'Diamond Members',
   },
+   {
+    id: '9',
+    title: 'New Gym Opening',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    imageUrl: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=500&h=300&fit=crop',
+    membershipTier: 'Diamond Members',
+  },
+   {
+    id: '10',
+    title: 'New Gym Opening',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    imageUrl: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=500&h=300&fit=crop',
+    membershipTier: 'Diamond Members',
+  },
 ];

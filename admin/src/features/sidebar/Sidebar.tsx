@@ -1,6 +1,7 @@
 import React from 'react';
 import { Home, PlusCircle, FileText, MessageSquare, CreditCard, Settings, User } from 'lucide-react';
-
+import logo from '../../assets/logo.png';
+import { Logo } from '../../components/common';
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -43,27 +44,32 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isMobile }) =
       {/* Sidebar */}
       <aside
         className={`
-          fixed lg:sticky top-0 left-0 h-screen bg-white border-r border-gray-200 z-50
+          fixed lg:sticky top-0 left-0 h-screen  z-50
           transition-all duration-300 ease-in-out flex flex-col py-6
-          ${isMobile ? 'w-64' : 'w-50 items-center'}
+          ${isMobile ? 'w-64 bg-white' : 'w-40 items-center'}
           ${!isOpen && isMobile ? '-translate-x-full' : 'translate-x-0'}
         `}
       >
+
+<Logo/>
+
+
+
         {/* Top Navigation Items */}
         <div className={`flex flex-col gap-3 flex-1 ${isMobile ? 'px-4' : ''}`}>
           {navItems.map((item) => (
             <button
               key={item.id}
               className={`
-                flex items-center gap-3 transition-all rounded-lg
+              cursor-pointer   flex items-center gap-3 transition-all rounded-full shadow-md
                 ${isMobile 
                   ? 'w-full px-4 py-3 justify-start' 
                   : 'w-12 h-12 justify-center'
                 }
                 ${
                   item.isActive
-                    ? 'bg-brand-purple text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-white text-gray-900 hover:bg-primary hover:text-white'
                 }
               `}
               title={item.label}
@@ -76,15 +82,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isMobile }) =
         </div>
 
         {/* Bottom Navigation Items */}
-        <div className={`flex flex-col gap-3 ${isMobile ? 'px-4' : ''}`}>
+        <div className={`flex flex-col gap-3 ${isMobile ? 'px-4' : 'md:mt-2'}`}>
           {bottomNavItems.map((item) => (
             <button
               key={item.id}
               className={`
-                flex items-center gap-3 bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all rounded-lg
+               cursor-pointer flex items-center gap-3 bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all rounded-full shadow-md
                 ${isMobile 
-                  ? 'w-full px-4 py-3 justify-start' 
+                  ? ' w-full px-4 py-3 justify-start' 
                   : 'w-12 h-12 justify-center'
+                } ${
+                  item.isActive
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-white text-gray-900 hover:bg-primary hover:text-white'
                 }
               `}
               title={item.label}

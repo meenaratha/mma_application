@@ -1,0 +1,77 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  transition: color var(--t-base);
+  user-select: none;
+}
+
+.labelActive {
+  color: var(--clr-text-primary);
+  font-weight: 600;
+}
+
+/* ── Toggle track ─────────────────────────────────────────────────────────── */
+.track {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--r-pill);
+  border: none;
+  cursor: pointer;
+  transition: background var(--t-base) var(--ease-out);
+  padding: 0;
+  outline-offset: 3px;
+}
+
+.trackOff {
+  background: #D1D5DB;
+}
+
+.trackOn {
+  background: var(--clr-primary);
+  box-shadow: 0 0 0 3px var(--clr-primary-glow);
+}
+
+.track:focus-visible {
+  outline: 2px solid var(--clr-primary);
+}
+
+/* ── Thumb ────────────────────────────────────────────────────────────────── */
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: transform var(--t-base) var(--ease-out),
+              width var(--t-fast);
+  display: block;
+}
+
+.thumbOn {
+  transform: translateX(20px);
+}
+
+/* ── Discount badge ───────────────────────────────────────────────────────── */
+.badge {
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: #FEF3C7;
+  color: #D97706;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

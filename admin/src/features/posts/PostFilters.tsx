@@ -43,7 +43,7 @@ const dateOptions = useMemo(
 
   
   return (
-    <div className="flex flex-wrap items-center gap-3 mb-6">
+    <div className="flex flex-wrap items-center gap-3 mb-2">
       <Button variant="secondary" size="md">
         <FileText className="w-4 h-4" />
         Create Post

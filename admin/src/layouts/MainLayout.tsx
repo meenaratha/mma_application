@@ -19,24 +19,26 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'hidden';
     };
   }, [isMobile, isOpen]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="flex h-full " style={{background:"radial-gradient(82.71% 82.71% at 50% 50%, #EDFFFC 0%, #FDFFFE 100%)" 
+}}>
+  
       {/* Sidebar - always visible on desktop, toggle on mobile */}
       <Sidebar isOpen={isOpen} onClose={close} isMobile={isMobile} />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 py-4 px-2">
       {/* Header - Only show on mobile */}
         {isMobile && <Header onMenuClick={toggle} isMobile={isMobile} />}
 
-        <main className="flex-1 px-6 py-6 overflow-auto">
-          <div className="max-w-[1600px] mx-auto">
+        <main className="flex-1  ">
+
             {children}
-          </div>
+        
         </main>
       </div>
     </div>
