@@ -1,5 +1,5 @@
 import {
-  useState, useCallback, useRef, useEffect, useMemo,
+  useState, useCallback, useRef, useMemo,
   type ChangeEvent, type FocusEvent,
 } from 'react';
 import type {

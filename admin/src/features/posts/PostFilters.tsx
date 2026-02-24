@@ -9,7 +9,7 @@ interface PostFiltersProps {
 }
 
 export const PostFilters = React.memo(({ filters, onFilterChange }: PostFiltersProps) => {
-  
+  void filters;
   const onGroupChange = useCallback(
   (value: string) => onFilterChange('group', value),
   [onFilterChange]

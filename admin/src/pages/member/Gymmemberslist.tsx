@@ -35,7 +35,6 @@ import {
   alpha,
   createTheme,
   ThemeProvider,
-  CssBaseline,
   TablePagination,
 } from "@mui/material";
 import type { SelectChangeEvent } from "@mui/material/Select";
@@ -470,8 +469,7 @@ const GymMembersList = () => {
 
   return (
     <ThemeProvider theme={gymTheme}>
-      <CssBaseline />
-      <Box sx={{ bgcolor: "background.default", minHeight: "100vh", p: { xs: "16px", sm: "20px 24px" } }}>
+      <Box sx={{ bgcolor: "background.default", minHeight: "100%", p: { xs: "16px", sm: "20px 24px" } }}>
 
         {/* ── Top Header ── */}
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3, flexWrap: "wrap", gap: 1.5 }}>

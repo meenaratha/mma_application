@@ -1,13 +1,15 @@
 /* ── Card shell ───────────────────────────────────────────────────────────── */
 .card {
   position: relative;
-  background: var(--clr-surface);
-  border: 1.5px solid var(--clr-border);
-  border-radius: var(--r-xl);
-  padding: 28px 24px 24px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 18px;
+  padding: 26px 22px 24px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   transition:
     transform var(--t-base) var(--ease-out),
     box-shadow var(--t-base) var(--ease-out),
@@ -18,52 +20,57 @@
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: #C4B5FD;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  border-color: #DDD6FE;
 }
 
 /* ── Popular variant ──────────────────────────────────────────────────────── */
 .popular {
-  border-color: var(--clr-primary);
-  box-shadow: var(--shadow-popular);
+  border-color: #7C3AED;
+  box-shadow: 0 14px 36px rgba(124, 58, 237, 0.22);
+  padding-top: 46px;
 }
 
 .popular:hover {
-  border-color: var(--clr-primary);
-  box-shadow: 0 16px 48px rgba(124, 58, 237, 0.28);
+  border-color: #7C3AED;
+  box-shadow: 0 16px 42px rgba(124, 58, 237, 0.28);
 }
 
 /* ── Selected variant ─────────────────────────────────────────────────────── */
 .selected {
-  border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px var(--clr-primary-glow), var(--shadow-popular);
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.16), 0 14px 36px rgba(124, 58, 237, 0.22);
 }
 
 /* ── Popular badge ────────────────────────────────────────────────────────── */
 .popularBadge {
   position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--clr-primary);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5B21B6;
   color: #fff;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: var(--r-pill);
+  padding: 0 16px;
+  border-radius: 18px 18px 0 0;
   white-space: nowrap;
-  box-shadow: 0 4px 12px var(--clr-primary-glow);
+  box-shadow: 0 6px 18px rgba(91, 33, 182, 0.3);
 }
 
 /* ── Plan header & name ───────────────────────────────────────────────────── */
 .planHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .planName {
@@ -78,6 +85,7 @@
 .priceBlock {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -85,7 +93,7 @@
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 800;
-  color: var(--clr-primary);
+  color: #2563EB;
   line-height: 1;
   letter-spacing: -1px;
 }
@@ -113,7 +121,7 @@
 .userLimit {
   font-size: 13px;
   color: var(--clr-text-muted);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .userCount {
@@ -127,7 +135,7 @@
   padding: 12px 0;
   border-radius: var(--r-pill);
   border: none;
-  background: var(--clr-primary);
+  background: #5B21B6;
   color: #fff;
   font-family: var(--font-body);
   font-size: 14px;
@@ -138,13 +146,13 @@
     background var(--t-fast),
     transform var(--t-fast),
     box-shadow var(--t-fast);
-  box-shadow: var(--shadow-btn);
+  box-shadow: 0 8px 20px rgba(91, 33, 182, 0.32);
 }
 
 .cta:hover {
-  background: var(--clr-primary-dark);
+  background: #4C1D95;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+  box-shadow: 0 10px 24px rgba(91, 33, 182, 0.36);
 }
 
 .cta:active {
@@ -153,12 +161,12 @@
 }
 
 .cta:focus-visible {
-  outline: 2px solid var(--clr-primary);
+  outline: 2px solid #7C3AED;
   outline-offset: 3px;
 }
 
 .ctaSelected {
-  background: var(--clr-primary-dark);
+  background: #4C1D95;
   animation: pulse-ring 1.5s ease-out;
 }
 
@@ -174,20 +182,21 @@
 .featuresDivider {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 11px;
   font-weight: 600;
-  color: var(--clr-text-faint);
+  color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  background: #F3F4F6;
+  padding: 6px 10px;
+  border-radius: 10px;
 }
 
 .featuresDivider::before,
 .featuresDivider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--clr-border);
+  display: none;
 }
 
 /* ── Feature list ─────────────────────────────────────────────────────────── */
@@ -196,4 +205,7 @@
   flex-direction: column;
   list-style: none;
   flex: 1;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 10px 14px;
 }

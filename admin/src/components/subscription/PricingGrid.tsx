@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import type { BillingCycle, PlanId, PricingPlan } from '../../types';
 import PlanCard from './PlanCard';
 import styles from './PricingGrid.module.css';
@@ -20,29 +20,6 @@ interface PricingGridProps {
  * - Stagger animation delays are computed once at map time.
  */
 const PricingGrid = memo<PricingGridProps>(({ plans, billing, selectedPlan, onSelectPlan }) => {
-  const cardElements = useMemo(
-    () =>
-      plans.map((plan, index) => (
-        <div
-          key={plan.id}
-          className={styles.cardWrapper}
-          style={{ animationDelay: `${index * 80}ms` }}
-        >
-          <PlanCard
-            plan={plan}
-            billing={billing}
-            isSelected={selectedPlan === plan.id}
-            onSelect={onSelectPlan}
-          />
-        </div>
-      )),
-    // Intentionally omit billing & selectedPlan from deps because
-    // PlanCard itself is memoised and will re-render only when its
-    // own props change — not the whole list.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [plans, onSelectPlan]
-  );
-
   return (
     <section
       className={styles.grid}

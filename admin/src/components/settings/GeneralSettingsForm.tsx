@@ -1,4 +1,4 @@
-import { memo, useState, useCallback, useRef, type ChangeEvent } from 'react';
+import { memo, useState, useCallback, type ChangeEvent } from 'react';
 import { useSettingsForm } from '../../hooks/useSettingsForm';
 import styles from './GeneralSettingsForm.module.css';
 import FormField from './FormField';
@@ -65,7 +65,7 @@ UploadZone.displayName = 'UploadZone';
 // ─── Main Form ────────────────────────────────────────────────────────────────
 const GeneralSettingsForm = memo(() => {
   const {
-    values, errors, touched, isSubmitting, isSubmitted,
+    values, touched, isSubmitting, isSubmitted,
     register, registerFile, getFieldError, handleSubmit, reset,
   } = useSettingsForm();
 

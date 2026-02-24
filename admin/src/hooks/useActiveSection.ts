@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { SettingsSection } from '@/types';
+import type { SettingsSection } from '../types';
 
 interface UseActiveSectionReturn {
   activeSection: SettingsSection;

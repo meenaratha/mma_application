@@ -144,3 +144,41 @@ export interface FormField {
   required?: boolean;
   colSpan?: 1 | 2 | 3;
 }
+
+
+
+// ─── dashboard ────────────────────────────────────────────────────────
+
+export type MemberPlan = 'Basic' | 'Premium' | 'Elite';
+export type MemberStatus = 'Paid' | 'Pending' | 'Overdue';
+export type WorkoutCategory = 'All workouts' | 'Weight gain' | 'Weight loss' | 'Healthy Body';
+
+export interface Member {
+  id: string;
+  name: string;
+  registerId: string;
+  age: number;
+  plan: MemberPlan;
+  date: string;
+  status: MemberStatus;
+}
+
+export interface StatsData {
+  month: string;
+  value: number;
+  color: string;
+}
+
+export interface StatCard {
+  title: string;
+  value: string | number;
+  subtitle?: string;
+  bgColor: string;
+  textColor: string;
+  icon: string;
+}
+
+export interface WorkoutTag {
+  label: string;
+  icon: string;
+}

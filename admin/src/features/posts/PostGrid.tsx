@@ -1,6 +1,6 @@
 import { PostCard } from './PostCard';
 import type { Post } from '../../types';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Grid } from 'react-window';
 import type { CellComponentProps } from 'react-window';
 import { useResponsive } from '../../hooks/useResponsive';
