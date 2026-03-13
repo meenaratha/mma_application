@@ -182,3 +182,4 @@ export interface WorkoutTag {
   label: string;
   icon: string;
 }
+

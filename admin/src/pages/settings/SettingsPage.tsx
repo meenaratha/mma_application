@@ -5,6 +5,7 @@ import GeneralSettingsForm from '../../components/settings/GeneralSettingsForm';
 import { NAV_ITEMS } from '../../data/settings';
 import type { SettingsSection } from '../../types';
 import styles from './SettingsPage.module.css';
+import TrainerSettingsForm from './Trainersettingsform';
 
 const SettingsPage = memo(() => {
   const [activeSection, setActiveSection] = useState<SettingsSection>('general');
@@ -13,6 +14,9 @@ const SettingsPage = memo(() => {
     switch (activeSection) {
       case 'general':
         return <GeneralSettingsForm />;
+
+        case 'trainer':               // ← NEW
+        return <TrainerSettingsForm />;
       default:
         return (
           <div className={styles.placeholder}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Home, PlusCircle, FileText, MessageSquare, CreditCard, Settings, User } from 'lucide-react';
 import { Logo } from '../../components/common';
 interface SidebarProps {
@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
 
 const bottomNavItems: NavItem[] = [
   { id: 'settings', icon: <Settings className="w-5 h-5" />, label: 'Settings', path: '/admin/settings' },
-  { id: 'profile', icon: <User className="w-5 h-5" />, label: 'Profile', path: '/profile' },
+  { id: 'profile', icon: <User className="w-5 h-5" />, label: 'Profile', path: '/admin/profile' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isMobile }) => {
@@ -34,6 +34,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isMobile }) =
 
   if (!isOpen && isMobile) return null;
 
+  
   return (
     <>
       {/* Overlay for mobile */}
@@ -56,8 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isMobile }) =
 
 <Logo/>
 
-
-
+       
         {/* Top Navigation Items */}
         <div className={`flex flex-col gap-3 flex-1 ${isMobile ? 'px-4' : ''}`}>
           {navItems.map((item) => {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PlusCircle } from 'lucide-react';
 import { Button } from '../../components/ui';
 import { PostFilters, PostGrid } from '../../features/posts';
@@ -6,6 +7,7 @@ import type { FilterOptions } from '../../types';
 import { mockPosts } from '../../utils/mockPosts';
 
 export const PostPage = () => {
+  const navigate = useNavigate();
   const [filters, setFilters] = useState<FilterOptions>({
     group: 'Select Group',
     mode: 'Select Mode',
@@ -25,7 +27,7 @@ export const PostPage = () => {
       <h1 className="text-2xl font-bold text-gray-900">
         List of your Post & Event
       </h1>
-      <Button variant="primary">
+      <Button variant="primary" onClick={() => navigate('/admin/create-post-event')}>
         <PlusCircle className="w-5 h-5" />
         Create a new post
       </Button>

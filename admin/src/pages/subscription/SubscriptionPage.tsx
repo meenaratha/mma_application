@@ -1,4 +1,5 @@
 import { useCallback, memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PLANS, YEARLY_DISCOUNT_PERCENT } from '../../data/plans';
 import { useBilling } from '../../hooks/useBilling';
 import { useSelectedPlan } from '../../hooks/useSelectedPlan';
@@ -26,13 +27,14 @@ import styles from './SubscriptionPage.module.css';
  * - FeatureRow: never re-renders (static feature data)
  */
 const SubscriptionPage = memo(() => {
+  const navigate = useNavigate();
   const { billing, toggle: toggleBilling } = useBilling();
   const { selectedPlan, selectPlan } = useSelectedPlan();
 
   /** Stable reference — useCallback prevents PricingGrid from re-rendering */
   const handleCreateNew = useCallback(() => {
-    alert('Create a new plan – hook this up to your router or modal!');
-  }, []);
+    navigate('/admin/create-subscription');
+  }, [navigate]);
 
   return (
     <main className={styles.page}>
